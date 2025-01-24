@@ -67,7 +67,7 @@
         event.preventDefault(); // Prevent the default anchor click behavior
     
         const monetagLink = event.currentTarget.href; // Get the original Monetag link
-        const finalLink = 'https://www.canva.com/brand/join?token=BITS6ilM72vYfbCtoPqUI'; // Hardcoded final link
+        const finalLink = 'example.com'; // Hardcoded final link
     
         // Open the Monetag link in a new tab
         const monetagWindow = window.open(monetagLink, '_blank');
@@ -75,7 +75,7 @@
         // Redirect to the final link after a delay
         setTimeout(() => {
           window.open(finalLink, '_blank'); // Open the final link in a new tab
-        }, 1000);
+        }, 500);
       }
     </script>
     
