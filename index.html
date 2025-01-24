@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Canva Pro Links for free</title>
+    <title>Canva Pro Links for Free</title>
     <!-- Favicon -->
     <link rel="icon" href="https://i.ibb.co/Ph3qrwV/th.jpg" type="image/x-icon" />
     <!-- Font Awesome icons -->
@@ -21,61 +21,62 @@
     </section>
     <!-- End of Parallax Pixel Background Animation -->
 
-      <a id="profilePicture" ref="https://imgbb.com/">
-        <img src="https://i.ibb.co/Ph3qrwV/th.jpg" alt="Profile Picture">
-      </a>
-
-    <div class="overlay" id="popup">
-      <div class="popup">
-        <div class="popup-photo">
-          <a href="https://avatars0.githubusercontent.com/u/43749971" target="_blank">
-            <img src="https://avatars0.githubusercontent.com/u/43749971" alt="Profile Picture">
-          </a>
-        </div>
-        <div class="popup-quote">
-          But... the sensation that I've lost something lingers for a longtime after I wake up.
-        </div>
-        <a class="popup-close" onclick="history.back()">&times;</a>
-      </div>
-    </div>
+    <a id="profilePicture" href="https://imgbb.com/">
+      <img src="https://i.ibb.co/Ph3qrwV/th.jpg" alt="Profile Picture">
+    </a>
 
     <div id="userName">
       @canvaprolinks
     </div>
 
     <div id="links">
-      <a class="link" href="https://poawooptugroo.com/4/8809191" target="_blank" onclick="redirectAfterMonetag(event, 'https://www.canva.com/brand/join?token=BITS6ilM72vYfbCtoPqUIA&referrer=team-invite')">
+      <a class="link" href="https://poawooptugroo.com/4/8809191" target="_blank" data-final-link="https://www.canva.com/brand/join?token=BITS6ilM72vYfbCtoPqUIA&referrer=team-invite">
         Canva Pro Team 1
       </a>
-      <a class="link" href="https://poawooptugroo.com/4/8809191" target="_blank" onclick="redirectAfterMonetag(event, 'https://www.canva.com/brand/join?token=6QLs2n72U8OmM6oq5_iwxA&referrer=team-invite')">
+      <a class="link" href="https://poawooptugroo.com/4/8809191" target="_blank" data-final-link="https://www.canva.com/brand/join?token=6QLs2n72U8OmM6oq5_iwxA&referrer=team-invite">
         Canva Pro Team 2
       </a>
-      <a class="link" href="https://poawooptugroo.com/4/8809191" target="_blank" onclick="redirectAfterMonetag(event, 'https://www.canva.com/brand/join?token=6QLs2n72U8OmM6oq5_iwxA&referrer=team-invite')">
+      <a class="link" href="https://poawooptugroo.com/4/8809191" target="_blank" data-final-link="https://www.canva.com/brand/join?token=6QLs2n72U8OmM6oq5_iwxA&referrer=team-invite">
         Canva Pro Team 3
       </a>
-      <a class="link" href="https://poawooptugroo.com/4/8809191" target="_blank" onclick="redirectAfterMonetag(event, 'https://www.canva.com/brand/join?token=6QLs2n72U8OmM6oq5_iwxA&referrer=team-invite')">
+      <a class="link" href="https://poawooptugroo.com/4/8809191" target="_blank" data-final-link="https://www.canva.com/brand/join?token=6QLs2n72U8OmM6oq5_iwxA&referrer=team-invite">
         Canva Pro Team 4
       </a>
     </div>
-    
-
-    
 
     <div id="hashtag">
       #BeHappyyy❤
     </div>
+
     <script>
-      function redirectAfterMonetag(event, finalLink) {
-        event.preventDefault(); // Prevent default link behavior
-    
-        // Open Monetag link
-        const monetagWindow = window.open(event.target.href, '_blank');
-    
-        // Redirect to the final link after a delay (3 seconds here, adjust as needed)
+      // Redirection function
+      function redirectAfterMonetag(event) {
+        event.preventDefault(); // Prevent default behavior of the link
+
+        // Get the Monetag link (original link clicked)
+        const monetagLink = event.currentTarget.href;
+
+        // Get the final link from the data attribute
+        const finalLink = event.currentTarget.getAttribute('data-final-link');
+
+        // Open the Monetag link in a new tab
+        const monetagWindow = window.open(monetagLink, '_blank');
+
+        if (!monetagWindow) {
+          alert("Popup blocked! Please allow popups for this site.");
+          return;
+        }
+
+        // Redirect to the final link after a delay
         setTimeout(() => {
-          window.open(finalLink, '_self');
-        }, 3000); // 3000ms = 3 seconds
+          window.location.href = finalLink; // Redirect in the same tab
+        }, 3000); // 3 seconds delay
       }
+
+      // Attach the redirect function to all links with the class "link"
+      document.querySelectorAll('.link').forEach(link => {
+        link.addEventListener('click', redirectAfterMonetag);
+      });
     </script>
   </body>
 </html>
