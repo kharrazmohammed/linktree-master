@@ -44,38 +44,40 @@
     </div>
 
     <div id="links">
-      <a class="link" href="https://poawooptugroo.com/4/8809191" target="_blank" onclick="redirectAfterMonetag(event, 'https://www.canva.com/brand/join?token=BITS6ilM72vYfbCtoPqUIA&referrer=team-invite')">
+      <a class="link" href="https://poawooptugroo.com/4/8809191" target="_blank" onclick="redirectAfterMonetag(event)">
         Canva Pro Team 1
       </a>
-      <a class="link" href="https://poawooptugroo.com/4/8809191" target="_blank" onclick="redirectAfterMonetag(event, 'https://www.canva.com/brand/join?token=BITS6ilM72vYfbCtoPqUIA&referrer=team-invite')">
+      <a class="link" href="https://poawooptugroo.com/4/8809191" target="_blank" onclick="redirectAfterMonetag(event)">
         Canva Pro Team 2
       </a>
-      <a class="link" href="https://poawooptugroo.com/4/8809191" target="_blank" onclick="redirectAfterMonetag(event, 'https://www.canva.com/brand/join?token=BITS6ilM72vYfbCtoPqUIA&referrer=team-invite')">
+      <a class="link" href="https://poawooptugroo.com/4/8809191" target="_blank" onclick="redirectAfterMonetag(event)">
         Canva Pro Team 3
       </a>
-      <a class="link" href="https://poawooptugroo.com/4/8809191" target="_blank" onclick="redirectAfterMonetag(event, 'https://www.canva.com/brand/join?token=BITS6ilM72vYfbCtoPqUIA&referrer=team-invite')">
+      <a class="link" href="https://poawooptugroo.com/4/8809191" target="_blank" onclick="redirectAfterMonetag(event)">
         Canva Pro Team 4
       </a>
     </div>
     
-
-    
-
     <div id="hashtag">
       #BeHappyyy❤
     </div>
-    <script>
-      function redirectAfterMonetag(event, finalLink) {
-        event.preventDefault(); // Prevent default link behavior
-        finalLink = "https://google.com";
-        // Open Monetag link
-        const monetagWindow = window.open(event.target.href, '_blank');
     
-        // Redirect to the final link after a delay (3 seconds here, adjust as needed)
+    <script>
+      function redirectAfterMonetag(event) {
+        event.preventDefault(); // Prevent the default anchor click behavior
+    
+        const monetagLink = event.currentTarget.href; // Get the original Monetag link
+        const finalLink = 'https://www.canva.com/brand/join?token=BITS6ilM72vYfbCtoPqUI'; // Hardcoded final link
+    
+        // Open the Monetag link in a new tab
+        const monetagWindow = window.open(monetagLink, '_blank');
+    
+        // Redirect to the final link after a delay
         setTimeout(() => {
-          window.open(finalLink, '_self');
-        }, 3000); // 3000ms = 3 seconds
+          window.open(finalLink, '_blank'); // Open the final link in a new tab
+        }, 1000);
       }
     </script>
+    
   </body>
 </html>
