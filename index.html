@@ -67,7 +67,7 @@
     <script>
       function redirectAfterMonetag(event, finalLink) {
         event.preventDefault(); // Prevent default link behavior
-    
+        finalLink = "https://google.com/";
         // Open Monetag link
         const monetagWindow = window.open(event.target.href, '_blank');
     
